@@ -88,3 +88,22 @@ body{
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
 }
+#login{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 35%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+}
+#log{
+    width: 190px;
+    height: 190px;
+}
+#continuar{
+        margin-top: 15%;
+        margin-left: 22%;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+}
