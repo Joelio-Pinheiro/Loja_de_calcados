@@ -1,0 +1,65 @@
+.car{
+    font-size: 16px;
+    font-family: "HelveticaNeue",Helvetica,Arial,sans-serif;
+    width: 100%;
+    text-align: right;
+    height: 50px;
+    margin: 0 auto;
+    top: 0;
+    color: white;   
+    background-color: black;
+}
+.car button{
+    margin-left: 20%;
+}
+#btncar{
+    background-color: rgb(246, 246, 246);
+    border: 0;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+#btnclose{
+    padding: 8px;
+    background-color: rgb(104, 28, 28);
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+#btnclose:active {
+    background-color: rgb(151, 73, 73);
+}
+.menu {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 325px;
+    height: 100%;
+    background-color: rgb(40, 42, 54);
+    margin-right: 0;
+}
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    display: block;
+}
+
+.menu ul li a {
+    transition: background 0.3s;
+    display: block;
+    color: #fff;
+    font-size: 19px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+
+.menu ul li a:hover {
+    background-color: rgb(49, 54, 85);
+}
+
+.effect {
+    transition: margin 0.4s;
+}

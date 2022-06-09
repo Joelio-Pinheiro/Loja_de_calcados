@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>SHOES</title>
 </head>
 <body>
     <header>
         <container id="cab">
                 <div><img src="imgs/a.png" width="30 px" height="30px"></div>
-                <div><img src="imgs/gv.png" width="30 px" height="30px"></div>
+                <div><button id="btncar"><img src="imgs/gv.png" width="30 px" height="30px"></button></div>
                 <div><img src="imgs/logo+incones.png" width="30 px" height="30px"></div>
                 <div><a href="login.html"><img src="imgs/s.png" width="30px" height="30px"></a></div>
                 <div>OFERTAS</div>
@@ -73,6 +74,23 @@
                 </a>
             </div>
         </container>
+        <div id="menu" class="menu effect">
+            <nav>
+                <div class = "car">
+                    SEU CARRINHO
+                        <button id="btnclose" style="text-align: right;">X</button>
+                </div>
+                <ul>
+                    <li><a href="#">Frutas</a></li>
+                    <li><a href="#">Link aqui</a></li>
+                    <li><a href="#">Link aqui</a></li>
+                    <li><a href="#">Link aqui</a></li>
+                    <li><a href="#">Link aqui</a></li>
+                    <li><a href="#">Link aqui</a></li>
+                </ul>
+            </nav>
+        </div>
     </main>
+    <script src="js/menu.js"></script>
 </body>
 </html>
