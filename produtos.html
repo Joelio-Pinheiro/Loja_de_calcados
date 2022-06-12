@@ -11,17 +11,21 @@
 <body>
     <header>
         <container id="cab">
-                <div><img src="imgs/a.png" width="30 px" height="30px"></div>
+            <form action="" id="busca">
+                <input type="text" style="margin-right: 10px;" id="inpbus" placeholder="Pesquisar">
+                <input type="submit" value="Buscar" id="btnbus">
+              </form>
                 <div><button id="btncar"><img src="imgs/gv.png" width="30 px" height="30px"></button></div>
-                <div><a href="login.html"><img src="imgs/s.png" width="30px" height="30px"></a></div>
-                <div>OFERTAS</div>
+                <div id='perfil'><img src="imgs/s.png" width="30px" height="30px"></div>
+                <div><a href="#ofertas">OFERTAS</a></div>
                 <div><a href="produtos.html">PRODUTOS</a></div>
                 <div><a href="index.html">HOME</a></div>
-                <div id="icon" style="margin-right: 50%;"><a href="index.html"><img src="imgs/360x600.png" width="70 px" height="40px"></a></div>
+                <div id="icon" style="margin-right: 30%;"><a href="index.html"><img src="imgs/360x600.png" width="70 px" height="40px"></a></div>
         </container>
     </header>
     <main>
         <!--produtos-->
+        <h1 class="prod">Produtos:<hr></h1>
         <container id="calcados">
             <div>
                 <a href="#">
@@ -45,28 +49,82 @@
                 </a>
             </div>
             <div>
-                <a href="#">
+                <a href= "compra.html">
                     <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
                     <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
                     <p>R$100.00</p>
                 </a>
             </div>
             <div>
-                <a href="#">
+                <a href= "compra.html">
                     <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
                     <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
                     <p>R$100.00</p>
                 </a>
             </div>
             <div>
-                <a href="#">
+                <a href= "compra.html">
                     <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
                     <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
                     <p>R$100.00</p>
                 </a>
             </div>
             <div>
-                <a href="#">
+                <a href= "compra.html">
+                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
+                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
+                    <p>R$100.00</p>
+                </a>
+            </div>
+        </container>
+        <!--ofertas-->
+        <h1 class="prod" id="ofertas">Ofertas: <hr></h1>
+        <container id="calcados">
+            <div>
+                <a href= "compra.html">
+                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
+                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
+                    <p>R$100.00 (-10%)</p>
+                    <!--(-x%)-->
+                </a>
+            </div>
+            <div>
+                <a href= "compra.html">
+                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
+                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
+                    <p>R$100.00 (-20%)</p>
+                </a>
+            </div>
+            <div>
+                <a href= "compra.html">
+                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
+                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
+                    <p>R$100.00 (-5%)</p>
+                </a>
+            </div>
+            <div>
+                <a href= "compra.html">
+                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
+                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
+                    <p>R$100.00 (-10%)</p>
+                </a>
+            </div>
+            <div>
+                <a href= "compra.html">
+                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
+                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
+                    <p>R$100.00</p>
+                </a>
+            </div>
+            <div>
+                <a href= "compra.html">
+                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
+                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
+                    <p>R$100.00</p>
+                </a>
+            </div>
+            <div>
+                <a href="compra.html">
                     <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
                     <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
                     <p>R$100.00</p>
@@ -76,8 +134,8 @@
         <div id="menu" class="menu effect">
             <nav>
                 <div class = "car">
-                    SEU CARRINHO
-                        <button id="btnclose" style="text-align: right;">X</button>
+                    <span id="namecar">SEU CARRINHO</span>
+                    <button id="btnclose">X</button>
                 </div>
                 <ul>
                     <li><a href="#">Frutas</a></li>
@@ -90,6 +148,15 @@
             </nav>
         </div>
     </main>
+    <div id="modal-perfil" class="modal-container">
+        <div class="modal">
+            <button id="btnfechar">x</button>
+            <div><img src="imgs/p.png" width="150px" height="150px"></div>
+            <div><hr><h2 style="font-size: 20pt; margin: 10px;">Joélio Pinheiro</h2></div>
+            <div><hr><h2 style="font-size: 15pt; margin: 15px;">joeliopinheiro10@gmail.com</h2><hr></div>
+            <button id="btnpro">SAIR</button>
+        </div>
+    </div>
     <br><br><br>
     <footer id="rodape">
         <iframe src="footer.html" scrolling="no" name="myIFrame" frameborder="0" id="frame"></iframe>

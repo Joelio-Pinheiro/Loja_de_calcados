@@ -1,16 +1,17 @@
 .car{
+    position: absolute;
     font-size: 16px;
     font-family: "HelveticaNeue",Helvetica,Arial,sans-serif;
     width: 100%;
-    text-align: right;
     height: 50px;
-    margin: 0 auto;
     top: 0;
     color: white;   
     background-color: black;
 }
-.car button{
-    margin-left: 20%;
+#namecar{
+    position: absolute;
+    bottom: 16px;
+    right: 100px;
 }
 #btncar{
     background-color: rgb(246, 246, 246);
@@ -19,11 +20,18 @@
     transition: all 0.5s;
 }
 #btnclose{
+    position: absolute;
     padding: 8px;
-    background-color: rgb(104, 28, 28);
+    background-color: black;
     color: #fff;
-    font-size: 15px;
     cursor: pointer;
+    font-size: 1.4em;
+    left: 0;
+    width: 47px;
+    height: 100%;
+    border: 0;
+    /*box-shadow: 0 4px 4px 0 rgba(0, 0, 0,.3);*/
+    text-align: center;
 }
 #btnclose:active {
     background-color: rgb(151, 73, 73);
@@ -35,8 +43,10 @@
     top: 0;
     width: 325px;
     height: 100%;
-    background-color: rgb(40, 42, 54);
+    /*background-color: #928a7f;*/
+    background-color: #331343;
     margin-right: 0;
+    z-index: 2000;
 }
 .menu ul {
     list-style: none;
@@ -57,9 +67,127 @@
 }
 
 .menu ul li a:hover {
-    background-color: rgb(49, 54, 85);
+    background-color: rgba(49, 54, 85,.3);
 }
 
 .effect {
     transition: margin 0.4s;
+}
+.modal-container{
+    display: none;
+    justify-content: end;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgb(0, 0, 0,.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+.modal-container.mostrar{
+    display: flex;
+}
+.modal{
+    position: relative;
+    margin-top: 5%;
+    margin-right: 4%;
+    z-index: 3000;
+    width: 17%;
+    height: 30%;
+    padding: 40px;
+    background: rgb(246, 246, 246);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0,.3);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal > div:nth-child(n+3){
+    margin: 0;
+    width: 120%;
+    padding: 0;
+}
+.modal > div:nth-child(n+3) > h2:nth-child(n){
+    text-align: center;
+
+}
+.modal-1{
+    position: relative;
+    margin-top: 5%;
+    margin-right: 4%;
+    z-index: 3000;
+    padding: 40px;
+    background: rgb(246, 246, 246);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0,.3);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-1 > div:nth-child(n+3){
+    margin: 0;
+    width: 120%;
+    padding: 0;
+}
+.modal-1 > div:nth-child(n+3) > h2:nth-child(n){
+    text-align: center;
+}
+/*.modal > div:nth-child(n+3):hover{
+    background-color: rgb(49, 54, 85, .1);;
+}*/
+#btnfechar{
+    position: absolute;
+    font-size: 1.4em;
+    top: -10px;
+    right: -10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 0;
+    /*background: #988b7a;*/
+    background: black;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0,.3);
+}
+@keyframes modal{
+    from{
+        opacity: 0;
+        transition: translate3d(0, -60px, 0);
+    }
+    to{
+        opacity: 1;
+        transition: translate3d(0, 0, 0);
+    }
+}
+.mostrar .mode{
+    animation: modal .3s;
+}
+#btnpro{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    color: #fff;
+    font-size: 18pt;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+#busca{
+    display: flex;
+}
+#btnbus{
+    background-color: black;
+    color: #fff;
+    border-radius: 26px;
+    font-size: 12pt;
+    height: 35px;
+    width: 40%;
+}
+#inpbus{
+    outline: unset;
+    border: 1px solid #646f83;
+    border-radius: 26px;
+    font-size: inherit;
 }

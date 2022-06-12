@@ -12,13 +12,16 @@
 <body>
     <header>
         <container id="cab">
-                <div><img src="imgs/a.png" width="30 px" height="30px"></div>
+                  <form action="" id="busca">
+                    <input type="text" style="margin-right: 10px;" id="inpbus" placeholder="Pesquisar">
+                    <input type="submit" value="Buscar" id="btnbus">
+                  </form>
                 <div><button id="btncar"><img src="imgs/gv.png" width="30 px" height="30px"></button></div>
-                <div><a href="login.html"><img src="imgs/s.png" width="30px" height="30px"></a></div>
-                <div><a href="#">OFERTAS</a></div>
+                <div id='perfil'><img src="imgs/s.png" width="30px" height="30px"></div>
+                <div><a href="file:///C:/Users/joeli/Desktop/JO%C3%89LIO/Infor3/Loja_de_calcados/produtos.html#ofertas">OFERTAS</a></div>
                 <div><a href="produtos.html">PRODUTOS</a></div>
                 <div><a href="index.html">HOME</a></div>
-                <div id="icon" style="margin-right: 50%;"><a href="index.html"><img src="imgs/360x600.png" width="70 px" height="40px"></a></div>
+                <div id="icon" style="margin-right: 30%;"><a href="index.html"><img src="imgs/360x600.png" width="70 px" height="40px"></a></div>
         </container>
     </header>
     <main>
@@ -62,27 +65,36 @@
                     <nav style="font-size: 20pt; margin-top: 5px;">R$999,99</nav>
                 </h1>
                 <a href="#">
-                    <input type="button" value="COMPRE AGORA &rarr;" id="compra" class="cmp" style="margin-left: 0; margin-top: 7%; margin-bottom: 0; width: 80%;">
+                    <input type="button" value="COMPRE AGORA" id="compra" class="cmp" style="margin-left: 0; margin-top: 7%; margin-bottom: 0; width: 80%;">
                 </a>
             </div>
         </container>
         <div id="menu" class="menu effect">
-            <nav>
-                <div class = "car">
-                    SEU CARRINHO
-                        <button id="btnclose" style="text-align: right;">X</button>
-                </div>
-                <ul>
-                    <li><a href="#">Frutas</a></li>
-                    <li><a href="#">Link aqui</a></li>
-                    <li><a href="#">Link aqui</a></li>
-                    <li><a href="#">Link aqui</a></li>
-                    <li><a href="#">Link aqui</a></li>
-                    <li><a href="#">Link aqui</a></li>
-                </ul>
-            </nav>
-        </div>
-    </main>
+          <nav>
+            <div class = "car">
+                <span id="namecar">SEU CARRINHO</span>
+                <button id="btnclose">X</button>
+            </div>
+            <ul>
+                <li><a href="#">Frutas</a></li>
+                <li><a href="#">Link aqui</a></li>
+                <li><a href="#">Link aqui</a></li>
+                <li><a href="#">Link aqui</a></li>
+                <li><a href="#">Link aqui</a></li>
+                <li><a href="#">Link aqui</a></li>
+            </ul>
+        </nav>
+      </div>
+  </main>
+  <div id="modal-perfil" class="modal-container">
+      <div class="modal-1" style="width: 23%; height: 36%;">
+          <button id="btnfechar">x</button>
+          <div><img src="imgs/p.png" width="150px" height="150px"></div>
+          <div><hr><h2 style="font-size: 20pt; margin: 10px; font-weight: bold; font-family: 'Times New Roman', Times, serif;">Joélio Pinheiro</h2></div>
+          <div><hr><h2 style="font-size: 15pt; margin: 15px; font-weight: bold; font-family: 'Times New Roman', Times, serif;">joeliopinheiro10@gmail.com</h2><hr></div>
+          <button id="btnpro">SAIR</button>
+      </div>
+  </div>
     <br><br><br>
     <footer id="rodape">
         <iframe src="footer.html" scrolling="no" name="myIFrame" frameborder="0" id="frame"></iframe>
