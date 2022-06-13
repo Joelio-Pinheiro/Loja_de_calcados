@@ -17,12 +17,19 @@
                     <input type="submit" value="Buscar" id="btnbus">
                   </form>
                 <div><button id="btncar"><img src="imgs/gv.png" width="30 px" height="30px"></button></div>
-                <div id='perfil'><img src="imgs/s.png" width="30px" height="30px"></div>
-                <div><a href="file:///C:/Users/joeli/Desktop/JO%C3%89LIO/Infor3/Loja_de_calcados/produtos.html#ofertas">OFERTAS</a></div>
-                <div><a href="produtos.html">PRODUTOS</a></div>
-                <div><a href="index.html">HOME</a></div>
-                <div id="icon" style="margin-right: 30%;"><a href="index.html"><img src="imgs/360x600.png" width="70 px" height="40px"></a></div>
-        </container>
+                <?php
+                    session_start();
+                    if($_SESSION['logado'] == true){
+                        echo"<div id='perfil'><img src='imgs/s.png' width='30px' height='30px'></div>";
+                    } else{
+                        echo"<div><a href='login.html'><img src='imgs/s.png' width='30px' height='30px'></a></div>";
+                    }
+                ?>
+                <div><a href="file:///C:/Users/joeli/Desktop/JO%C3%89LIO/Infor3/Loja_de_calcados/produtos.php#ofertas">OFERTAS</a></div>
+                <div><a href="produtos.php">PRODUTOS</a></div>
+                <div><a href="index.php">HOME</a></div>
+                <div id="icon" style="margin-right: 30%;"><a href="index.php"><img src="imgs/360x600.png" width="70 px" height="40px"></a></div>
+            </container>
     </header>
     <main>
         <container id="produto" class="pdt">
@@ -62,7 +69,10 @@
                 Basquete/Casual
                 <h1 id="canome">Tênis Air Jordan <br>
                     1 Mid Se Masculino
-                    <nav style="font-size: 20pt; margin-top: 5px;">R$999,99</nav>
+                    <nav style="font-size: 20pt; margin-top: 5px;">
+                      R$999,99
+                      <button id="adicionar"><img src="imgs/gv.png" width="40px" height="40px" alt="Adicionar ao Carrinho"></button>
+                    </nav>
                 </h1>
                 <a href="#">
                     <input type="button" value="COMPRE AGORA" id="compra" class="cmp" style="margin-left: 0; margin-top: 7%; margin-bottom: 0; width: 80%;">
@@ -90,16 +100,20 @@
       <div class="modal-1" style="width: 23%; height: 36%;">
           <button id="btnfechar">x</button>
           <div><img src="imgs/p.png" width="150px" height="150px"></div>
-          <div><hr><h2 style="font-size: 20pt; margin: 10px; font-weight: bold; font-family: 'Times New Roman', Times, serif;">Joélio Pinheiro</h2></div>
-          <div><hr><h2 style="font-size: 15pt; margin: 15px; font-weight: bold; font-family: 'Times New Roman', Times, serif;">joeliopinheiro10@gmail.com</h2><hr></div>
-          <button id="btnpro">SAIR</button>
+          <?php
+            echo"<div><hr><h2 style='font-size: 20pt; margin: 10px; font-weight: bold; font-family: 'Times New Roman', Times, serif;'>{$_SESSION['nome']}</h2></div>";
+            echo"<div><hr><h2 style='font-size: 13pt; margin: 15px; font-weight: bold; font-family: 'Times New Roman', Times, serif;'>{$_SESSION['email']}</h2><hr></div>";
+          ?>
+          <a href="logout.php" id="btnpro" style="display: flex; text-align: center;text-decoration: none; align-items: center;justify-content: center;">SAIR</a>
       </div>
   </div>
     <br><br><br>
-    <footer id="rodape">
-        <iframe src="footer.html" scrolling="no" name="myIFrame" frameborder="0" id="frame"></iframe>
-    </footer>
+    <footer id="rodape" style="position: relative;">
+      <iframe src="footer.html" scrolling="no" name="myIFrame" frameborder="0" id="frame"></iframe>
+      <div id="final"></div>
+  </footer>
     <script src="js/menu.js"></script>
+    <script src="js/carrinho.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

@@ -18,27 +18,27 @@
                 <div><button id="btncar"><img src="imgs/gv.png" width="30 px" height="30px"></button></div>
                 <div><a href="login.html"><img src="imgs/s.png" width="30px" height="30px"></a></div>
                 <div><a href="file:///C:/Users/joeli/Desktop/JO%C3%89LIO/Infor3/Loja_de_calcados/produtos.html#ofertas">OFERTAS</a></div>
-                <div><a href="produtos.html">PRODUTOS</a></div>
-                <div><a href="index.html">HOME</a></div>
-                <div id="icon" style="margin-right: 30%;"><a href="index.html"><img src="imgs/360x600.png" width="70 px" height="40px"></a></div>
-        </container>
+                <div><a href="produtos.php">PRODUTOS</a></div>
+                <div><a href="index.php">HOME</a></div>
+                <div id="icon" style="margin-right: 30%;"><a href="index.php"><img src="imgs/360x600.png" width="70 px" height="40px"></a></div>
+            </container>
     </header>
     <main>
         <container id="login">
             <div><img src="imgs/p.png" id="log"></div>
             Faça seu login<br>
             <div>
-                <form action="login.html">
+                <form action="cadastrar.php" method="POST">
                     Nome:<br>
-                    <input type="text" required><br>
+                    <input type="text" required name="nome"><br>
                     E-mail:<br>
-                    <input type="email" name="" id="" required><br>
+                    <input type="email" name="email" id="" required><br>
                     CPF:<br>
-                    <input type="text" required><br>
+                    <input type="text" name="CPF" required><br>
                     Senha:<br>
-                    <input type="password" required><br>
+                    <input type="password" name="senha" required><br>
                     Confirme a Senha:<br>
-                    <input type="password" required><br>
+                    <input type="password" name="confsenha" required><br>
                     <input type="submit" value="Continuar" id="continuar">
                 </form>
             </div>
@@ -62,8 +62,9 @@
         <script src="js/menu.js"></script>
     </main>
     <br><br><br>
-    <footer id="rodape">
+    <footer id="rodape" style="position: relative;">
         <iframe src="footer.html" scrolling="no" name="myIFrame" frameborder="0" id="frame"></iframe>
+        <div id="final"></div>
     </footer>
 </body>
 </html>

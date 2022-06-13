@@ -44,7 +44,8 @@
     width: 325px;
     height: 100%;
     /*background-color: #928a7f;*/
-    background-color: #331343;
+    /*background-color: #331343;*/
+    background-color: #262e42;
     margin-right: 0;
     z-index: 2000;
 }
@@ -173,6 +174,7 @@
     font-size: 18pt;
     font-family: 'Times New Roman', Times, serif;
     cursor: pointer;
+    
 }
 #busca{
     display: flex;

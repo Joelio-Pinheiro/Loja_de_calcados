@@ -135,7 +135,6 @@ body{
     border: 0;
     padding: 0;
     background-color: #000;
-    z-index: -1000;
 }
 .prod{
     position: static;
@@ -161,4 +160,18 @@ hr{
 svg:hover{
     width: 65px;
     height: 65px;
+}
+#final{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+#adicionar{
+    background-color: rgba(252, 250, 250, 0);
+    border: 0;
+    cursor: pointer;
 }
