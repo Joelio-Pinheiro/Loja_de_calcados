@@ -1,3 +1,6 @@
+<?php
+include('conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,117 +36,56 @@
     <main>
         <!--produtos-->
         <h1 class="prod">Produtos:<hr></h1>
-        <container id="calcados">
-            <div>
-                <a href="#">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00</p>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00</p>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00</p>
-                </a>
-            </div>
-            <div>
-                <a href= "compra.php">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00</p>
-                </a>
-            </div>
-            <div>
-                <a href= "compra.php">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00</p>
-                </a>
-            </div>
-            <div>
-                <a href= "compra.php">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00</p>
-                </a>
-            </div>
-            <div>
-                <a href= "compra.php">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00</p>
-                </a>
-            </div>
+        <container id="calcados" style="max-height: none;">
+        <?php
+                $produto = "SELECT * FROM produtos";
+                $result = mysqli_query($conexao, $produto);
+                $linha = mysqli_fetch_assoc($result);
+                $total = mysqli_num_rows($result);
+                if($total > 0){
+                    do{
+                ?>
+                <div>
+                    <a href= "compra.php?id=<?=$linha['id']?>">
+                        <img src="<?=$linha['img1']?>">
+                        <h4><?=$linha['nome']?></h4>
+                        <p>R$<?=number_format($linha['preco'], 2, ',', '.')?>
+                        <?php 
+                        if($linha['oferta'] == 1){?>
+                            (-<?=$linha['desconto']?>%)
+                        <?php
+                        }
+                        ?>
+                    </p>
+                    </a>
+                </div>
+                <?php
+                    }while($linha = mysqli_fetch_assoc($result));
+                }
+                ?>
         </container>
         <!--ofertas-->
         <h1 class="prod" id="ofertas">Ofertas: <hr></h1>
-        <container id="calcados">
+        <container id="calcados" style="max-height: none;">
             <?php
-                include('conexao.php');
                 $produto = "SELECT * FROM produtos where oferta = 1";
                 $result = mysqli_query($conexao, $produto);
-                $row = mysqli_num_rows($result);
-                if($row != 0){
-                echo'<div>';
-                    echo'<a href= "compra.php">';
-                        echo'<img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">';
-                        echo'<h4>Tênis Air Jordan 1 Mid Se Masculino</h4>';
-                        echo'<p>R$100.00 (-10%)</p>';
-                    echo'</a>';
-                echo'</div>';
+                $linha = mysqli_fetch_assoc($result);
+                $total = mysqli_num_rows($result);
+                if($total > 0){
+                    do{
+                ?>
+                <div>
+                    <a href= "compra.php?id=<?=$linha['id']?>">
+                        <img src="<?=$linha['img1']?>">
+                        <h4><?=$linha['nome']?></h4>
+                        <p>R$ R$<?=number_format($linha['preco'], 2, ',', '.')?> (-<?=$linha['desconto']?>%)</p>
+                    </a>
+                </div>
+                <?php
+                    }while($linha = mysqli_fetch_assoc($result));
                 }
-            ?>
-            <div>
-                <a href= "compra.php">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00 (-20%)</p>
-                </a>
-            </div>
-            <div>
-                <a href= "compra.php">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00 (-5%)</p>
-                </a>
-            </div>
-            <div>
-                <a href= "compra.php">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00 (-10%)</p>
-                </a>
-            </div>
-            <div>
-                <a href= "compra.php">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00</p>
-                </a>
-            </div>
-            <div>
-                <a href= "compra.php">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00</p>
-                </a>
-            </div>
-            <div>
-                <a href="compra.php">
-                    <img src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png">
-                    <h4>Tênis Air Jordan 1 Mid Se Masculino</h4>
-                    <p>R$100.00</p>
-                </a>
-            </div>
+                ?>
         </container>
         <div id="menu" class="menu effect">
             <nav>

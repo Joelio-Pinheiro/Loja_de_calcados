@@ -17,7 +17,7 @@
               </form>
                 <div><button id="btncar"><img src="imgs/gv.png" width="30 px" height="30px"></button></div>
                 <div><a href="login.html"><img src="imgs/s.png" width="30px" height="30px"></a></div>
-                <div><a href="file:///C:/Users/joeli/Desktop/JO%C3%89LIO/Infor3/Loja_de_calcados/produtos.html#ofertas">OFERTAS</a></div>
+                <div><a href="produtos.php?#ofertas">OFERTAS</a></div>
                 <div><a href="produtos.php">PRODUTOS</a></div>
                 <div><a href="index.php">HOME</a></div>
                 <div id="icon" style="margin-right: 30%;"><a href="index.php"><img src="imgs/360x600.png" width="70 px" height="40px"></a></div>

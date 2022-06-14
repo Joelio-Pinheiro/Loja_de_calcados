@@ -1,3 +1,6 @@
+<?php
+include('conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,30 +28,34 @@
                         echo"<div><a href='login.html'><img src='imgs/s.png' width='30px' height='30px'></a></div>";
                     }
                 ?>
-                <div><a href="file:///C:/Users/joeli/Desktop/JO%C3%89LIO/Infor3/Loja_de_calcados/produtos.php#ofertas">OFERTAS</a></div>
+                <div><a href="produtos.php?#ofertas">OFERTAS</a></div>
                 <div><a href="produtos.php">PRODUTOS</a></div>
                 <div><a href="index.php">HOME</a></div>
                 <div id="icon" style="margin-right: 30%;"><a href="index.php"><img src="imgs/360x600.png" width="70 px" height="40px"></a></div>
             </container>
     </header>
     <main>
+      <?php
+        $id = $_GET['id'];
+        $produto = "SELECT * FROM produtos WHERE id ='{$id}'";
+        $result = mysqli_query($conexao, $produto);
+        $linha = mysqli_fetch_assoc($result);
+        $total = mysqli_num_rows($result);
+        do{
+        ?>
         <container id="produto" class="pdt">
             <div id="container">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img class="d-block w-530" src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png" alt="Primeiro Slide" width="530 px" height="530px">
+                        <img class="d-block w-530" src="<?=$linha['img1']?>" alt="Primeiro Slide" width="530 px" height="530px">
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-530" src="https://images.lojanike.com.br/1200x630/produto/tenis-air-jordan-i-mid-edicao-especial-masculino-852542-800-1.png" alt="Segundo Slide" width="530 px" height="530px">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-530" src="https://images.lojanike.com.br/1024x1024/produto/tenis-nike-air-jordan-i-mid-unissex-554724-113-1.png" alt="Terceiro Slide" width="530 px" height="530px">
+                        <img class="d-block w-530" src="<?=$linha['img2']?>" alt="Segundo Slide" width="530 px" height="530px">
                       </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -66,17 +73,22 @@
                   </div>
             </div>
             <div>
+              <?php
+              //do{
+              ?>
                 Basquete/Casual
-                <h1 id="canome">Tênis Air Jordan <br>
-                    1 Mid Se Masculino
+                <h1 id="canome"><?=$linha['nome']?><br>
                     <nav style="font-size: 20pt; margin-top: 5px;">
-                      R$999,99
+                    R$<?=number_format($linha['preco'], 2, ',', '.')?>
                       <button id="adicionar"><img src="imgs/gv.png" width="40px" height="40px" alt="Adicionar ao Carrinho"></button>
                     </nav>
                 </h1>
                 <a href="#">
                     <input type="button" value="COMPRE AGORA" id="compra" class="cmp" style="margin-left: 0; margin-top: 7%; margin-bottom: 0; width: 80%;">
                 </a>
+                <?php
+              }while($linha = mysqli_fetch_assoc($result));
+                ?>
             </div>
         </container>
         <div id="menu" class="menu effect">
@@ -86,6 +98,7 @@
                 <button id="btnclose">X</button>
             </div>
             <ul>
+                <li><a href="#">fesnfsfbusifbsfibsfiu</a></li>
                 <li><a href="#">Frutas</a></li>
                 <li><a href="#">Link aqui</a></li>
                 <li><a href="#">Link aqui</a></li>
