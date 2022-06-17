@@ -26,20 +26,21 @@
     <main>
         <container id="login">
             <div><img src="imgs/p.png" id="log"></div>
-            Faça seu login<br>
+            <h6 style="font-size: 20px; margin-top:0;">Faça seu login</h6>
             <div>
                 <form action="cadastrar.php" method="POST">
-                    Nome:<br>
-                    <input type="text" required name="nome"><br>
-                    E-mail:<br>
-                    <input type="email" name="email" id="" required><br>
-                    CPF:<br>
-                    <input type="text" name="CPF" required><br>
-                    Senha:<br>
-                    <input type="password" name="senha" required><br>
-                    Confirme a Senha:<br>
-                    <input type="password" name="confsenha" required><br>
-                    <input type="submit" value="Continuar" id="continuar">
+
+                    <h6 style="font-size: 20px; margin: 8px;">Nome:</h6>
+                    <input type="text" required name="nome" style="outline: unset; border: 1px solid #646f83; border-radius: 26px;font-size: inherit; height: 40px; width: 250px; font-size: 17px;"><br>
+                    <h6 style="font-size: 20px; margin: 8px;">Email:</h6>
+                    <input type="email" name="email" id="" required style="outline: unset; border: 1px solid #646f83; border-radius: 26px;font-size: inherit; height: 40px; width: 250px; font-size: 17px;"><br>
+                    <h6 style="font-size: 20px; margin: 8px;">CPF:</h6>
+                    <input type="text" name="CPF" required style="outline: unset; border: 1px solid #646f83; border-radius: 26px;font-size: inherit; height: 40px; width: 250px; font-size: 17px;"><br>
+                    <h6 style="font-size: 20px; margin: 8px;">Senha:</h6>
+                    <input type="password" name="senha" placeholder="Senha" required style="outline: unset; border: 1px solid #646f83; border-radius: 26px;font-size: inherit; height: 40px; width: 250px; font-size: 17px;"><br>
+                    <h6 style="font-size: 20px; margin: 8px;">Confirmar Senha:</h6>
+                    <input type="password" name="confsenha" placeholder="Confirme a Senha" required style="outline: unset; border: 1px solid #646f83; border-radius: 26px;font-size: inherit; height: 40px; width: 250px; font-size: 17px;"><br>
+                    <input type="submit" value="Continuar" id="continuar" style="outline: unset; border: 1px solid #646f83; border-radius: 26px;font-size: inherit; background-color: black; color: white; height: 45px; width: 100px; font-size: 17px;">
                 </form>
             </div>
             <div id="menu" class="menu effect">
