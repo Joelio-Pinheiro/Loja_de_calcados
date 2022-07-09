@@ -1,3 +1,6 @@
+<?php
+include('conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -96,42 +99,32 @@
     <div id="remover">
         <h2 style="margin-top: 15px; margin-bottom: 25px;">SHOES|REMOVER</h2>
         <container id="calcados" style="max-height: none;">
-            <div>
-                <img src="produtos/jordan.png">
-                <h4>Nike Jordan 2</h4>
-                <p>R$199,00<p>
-                <button class="alterar">Remover</button>
-            </div>
-            <div>
-                <img src="produtos/jordan.png">
-                <h4>Nike Jordan 2</h4>
-                <p>R$199,00<p>
-                <button class="alterar">Remover</button>
-            </div>
-            <div>
-                <img src="produtos/jordan.png">
-                <h4>Nike Jordan 2</h4>
-                <p>R$199,00<p>
-                <button class="alterar">Remover</button>
-            </div>
-            <div>
-                <img src="produtos/jordan.png">
-                <h4>Nike Jordan 2</h4>
-                <p>R$199,00<p>
-                <button class="alterar">Remover</button>
-            </div>
-            <div>
-                <img src="produtos/jordan.png">
-                <h4>Nike Jordan 2</h4>
-                <p>R$199,00<p>
-                <button class="alterar">Remover</button>
-            </div>
-            <div>
-                <img src="produtos/jordan.png">
-                <h4>Nike Jordan 2</h4>
-                <p>R$199,00<p>
-                <button class="alterar">Remover</button>
-            </div>
+        <?php
+                $produto = "SELECT * FROM produtos";
+                $result = mysqli_query($conexao, $produto);
+                $linha = mysqli_fetch_assoc($result);
+                $total = mysqli_num_rows($result);
+                if($total > 0){
+                    do{
+                ?>
+                <div>
+                        <img src="<?=$linha['img1']?>">
+                        <h4><?=$linha['nome']?></h4>
+                        <p>R$<?=number_format($linha['preco'], 2, ',', '.')?>
+                        <?php 
+                        if($linha['oferta'] == 1){?>
+                            (-<?=$linha['desconto']?>%)
+                        <?php
+                        }
+                        ?>
+                        <a href= "action.php?id=<?=$linha['id']?>&action=remover"><button class="alterar">Remover</button>
+                    </p>
+                    </a>
+                </div>
+                <?php
+                    }while($linha = mysqli_fetch_assoc($result));
+                }
+                ?>
         </container>
     </div>
 <script src="js/adm.js"></script>

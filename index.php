@@ -9,6 +9,33 @@ include('conexao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .car{
+            position: relative;
+        }
+        #calcados > div:hover{
+            background-color: rgb(231 226 226 / 77%);
+            -webkit-transform: scale(1.07);
+            -ms-transform: scale(1.07);
+            transform: scale(1.07);
+
+            -webkit-animation: swing 1s ease;
+            animation: swing 1s ease;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+        }
+        /*#produto > div:nth-child(n+2):hover{
+            -webkit-transform: rotateZ(-12deg);
+            -ms-transform: rotateZ(-12deg);
+            transform: rotateZ(-12deg);
+        }*/
+        #btnmais:hover{
+            -webkit-animation: swing 1s ease;
+            animation: swing 1s ease;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+        }
+    </style>
     <title>SHOES</title>
 </head>
 <body>
@@ -21,6 +48,7 @@ include('conexao.php');
                 <div><button id="btncar"><img src="imgs/gv.png" width="30 px" height="30px"></button></div>
                 <?php
                     session_start();
+                    $_SESSION['logado'] = $_SESSION['logado'] or false;
                     if($_SESSION['logado'] == true){
                         echo"<div id='perfil'><img src='imgs/s.png' width='30px' height='30px'></div>";
                     } else{
@@ -54,6 +82,7 @@ include('conexao.php');
                 $result = mysqli_query($conexao, $produto);
                 $linha = mysqli_fetch_assoc($result);
                 $total = mysqli_num_rows($result);
+                $cont = 0;
                 if($total > 0){
                     do{
                 ?>
@@ -65,6 +94,10 @@ include('conexao.php');
                     </a>
                 </div>
                 <?php
+                    $cont++;
+                    if($cont >= 4){
+                        break;
+                    }
                     }while($linha = mysqli_fetch_assoc($result));
                 }
                 ?>

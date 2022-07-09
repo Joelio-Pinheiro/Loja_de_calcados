@@ -9,6 +9,22 @@ include('conexao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .car{
+            position: relative;
+        }
+        #calcados > div:hover{
+            background-color: rgb(231 226 226 / 77%);
+            -webkit-transform: scale(1.07);
+            -ms-transform: scale(1.07);
+            transform: scale(1.07);
+
+            -webkit-animation: swing 1s ease;
+            animation: swing 1s ease;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+        }
+    </style>
     <title>SHOES</title>
 </head>
 <body>
@@ -35,7 +51,7 @@ include('conexao.php');
     </header>
     <main>
         <!--produtos-->
-        <h1 class="prod">Produtos:<hr></h1>
+        <h1 class="prod">PRODUTOS<hr></h1>
         <container id="calcados" style="max-height: none;">
         <?php
                 $produto = "SELECT * FROM produtos";
@@ -65,7 +81,7 @@ include('conexao.php');
                 ?>
         </container>
         <!--ofertas-->
-        <h1 class="prod" id="ofertas">Ofertas: <hr></h1>
+        <h1 class="prod" id="ofertas">OFERTAS<hr></h1>
         <container id="calcados" style="max-height: none;">
             <?php
                 $produto = "SELECT * FROM produtos where oferta = 1";
