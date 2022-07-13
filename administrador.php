@@ -27,27 +27,27 @@ include('conexao.php');
     <div id="cadastro">
         <h2 style="margin-top: 15px;">SHOES|CADASTRAR</h2>
         <div class="box">
-            <form action="">
+            <form action="action.php?action=cadastrar" method="POST" enctype="multipart/form-data">
                 <fieldset style="display: flex; flex-direction: column; border: 0;">
                     <label>
                         <span>Modelo:</span>
                         <br>
-                        <input type="text" name="nome">
+                        <input type="text" name="nome" required>
                         <span>Preço:</span>
-                        <input type="number" name="preco" id="valor" min="0">
+                        <input type="number" name="preco" id="valor" min="0" required>
                     </label>
                     <label>
                         <span>Desconto:</span>
                         <br>
-                        <input type="number" name="Desconto" id="valor" min="0" max="90">
+                        <input type="number" name="desconto" id="valor" min="0" max="90">
                     </label>
                     <label>
                         <span>Imagem 1:</span>
-                        <input type="file" name="img1" class="img">
+                        <input type="file" name="img1" class="img" required>
                     </label>
                     <label>
                         <span>Imagem 2:</span>
-                        <input type="file" name="img2" class="img">
+                        <input type="file" name="img2" class="img" required>
                     </label>
                         <input type="submit" value="Salvar" id="salvar">
                 </fieldset>

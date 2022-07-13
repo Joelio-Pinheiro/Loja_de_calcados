@@ -1,5 +1,7 @@
 <?php
 include('conexao.php');
+session_start();
+$_SESSION['logado'] = $_SESSION['logado'] or false;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -47,8 +49,6 @@ include('conexao.php');
               </form>
                 <div><button id="btncar"><img src="imgs/gv.png" width="30 px" height="30px"></button></div>
                 <?php
-                    session_start();
-                    $_SESSION['logado'] = $_SESSION['logado'] or false;
                     if($_SESSION['logado'] == true){
                         echo"<div id='perfil'><img src='imgs/s.png' width='30px' height='30px'></div>";
                     } else{
